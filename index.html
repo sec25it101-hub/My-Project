@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AquaShield AI Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header>
+    <div>
+      <h1>AquaShield AI</h1>
+      <p>Smart Aquatic Plastic Pollution Management System</p>
+    </div>
+    <span class="badge">AI + Hardware Prototype</span>
+  </header>
+
+  <main>
+    <section class="cards">
+      <div class="card"><span>Plastic Collected</span><strong id="waste">12.6 kg</strong></div>
+      <div class="card"><span>Detections</span><strong id="detections">38</strong></div>
+      <div class="card"><span>Hotspots</span><strong id="hotspots">4</strong></div>
+      <div class="card"><span>Pollution Index</span><strong id="pollution">--</strong></div>
+    </section>
+
+    <section class="grid">
+      <div class="panel">
+        <h2>Floating Collector</h2>
+        <p>Control the prototype collection mechanism.</p>
+        <button id="collectorBtn" onclick="toggleCollector()">Start Collector</button>
+        <p id="collectorStatus">Status: Stopped</p>
+      </div>
+
+      <div class="panel">
+        <h2>Sensor Monitoring</h2>
+        <div class="sensor"><span>Water Level</span><b id="water">--</b></div>
+        <div class="sensor"><span>Battery</span><b id="battery">--</b></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>AI Plastic Detection Demo</h2>
+      <p>Upload a water-surface image for the prototype detector.</p>
+      <input type="file" id="image" accept="image/*">
+      <button onclick="detectPlastic()">Analyze Image</button>
+      <div id="result"></div>
+    </section>
+
+    <section class="panel">
+      <h2>System Flow</h2>
+      <div class="flow">
+        <span>Camera</span><i>→</i><span>AI Detection</span><i>→</i>
+        <span>Collector</span><i>→</i><span>Storage</span><i>→</i><span>Sorting & Recycling</span>
+      </div>
+    </section>
+  </main>
+
+  <footer>AquaShield AI • Prototype for environmental sustainability</footer>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
